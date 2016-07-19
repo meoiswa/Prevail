@@ -10,5 +10,9 @@ namespace Prevail.Model
 
         public float TeleportCooldown { get; private set; }
 
+
+        public BossCharacter() : base(1000)
+        {
+        }
     }
 }

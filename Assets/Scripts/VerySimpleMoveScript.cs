@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using Prevail.Model;
 
 public class VerySimpleMoveScript : NetworkBehaviour {
 
+    public BossCharacter Boss;
+
 	// Use this for initialization
 	void Start () {
-	
+        Boss = new BossCharacter();
 	}
 	
 	// Update is called once per frame

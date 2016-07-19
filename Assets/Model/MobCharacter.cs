@@ -121,11 +121,8 @@ namespace Prevail.Model
 
         private Quirk currentQuirk;
 
-        public MobCharacter()
+        public MobCharacter() : base(100)
         {
-            MaxHealth = 100;
-            Health = MaxHealth;
-
             ForwardSpeed = 8.0f;   // Speed when walking forward
             BackwardSpeed = 4.0f;  // Speed when walking backwards
             StrafeSpeed = 4.0f;    // Speed when walking sideways
