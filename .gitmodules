@@ -1,0 +1,3 @@
+[submodule "Assets/NewtonVR"]
+	path = Assets/NewtonVR
+	url = https://github.com/TomorrowTodayLabs/NewtonVR/

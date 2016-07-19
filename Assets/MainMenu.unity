@@ -341,6 +341,7 @@ MonoBehaviour:
   m_LobbyScene: MainMenu
   m_PlayScene: ProceduralTown
   lobbySlots: []
+  cameraRigPrefab: {fileID: 140386, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
 --- !u!4 &1506442634
 Transform:
   m_ObjectHideFlags: 0

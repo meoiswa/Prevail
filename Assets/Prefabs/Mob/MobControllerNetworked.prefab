@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11413018}
   - 114: {fileID: 11479020}
   - 114: {fileID: 11469802}
+  - 114: {fileID: 11477852}
   m_Layer: 0
   m_Name: MobControllerNetworked
   m_TagString: Untagged
@@ -243,12 +244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2090612}
   movementSettings:
-    ForwardSpeed: 8
-    BackwardSpeed: 4
-    StrafeSpeed: 4
-    RunMultiplier: 2
-    RunKey: 304
-    JumpForce: 30
     SlopeCurveModifier:
       serializedVersion: 2
       m_Curve:
@@ -286,6 +281,25 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
+--- !u!114 &11477852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a39dec1a23a043a14d554ccce8fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigidbody: {fileID: 5419272}
+  CanAttach: 1
+  DisableKinematicOnAttach: 1
+  EnableKinematicOnDetach: 0
+  DropDistance: 1
+  EnableGravityOnDetach: 1
+  AttachedHand: {fileID: 0}
+  InteractionPoint: {fileID: 0}
 --- !u!114 &11479020
 MonoBehaviour:
   m_ObjectHideFlags: 1
