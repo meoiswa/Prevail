@@ -8,21 +8,33 @@ using UnityEngine.Networking;
 
 public class CustomNetworkLobbyManager : NetworkLobbyManager
 {
-    public GameObject cameraRigPrefab;
+    public GameObject cameraRig;
+
+    NetworkConnection hostConn;
+
+    public override void OnLobbyStartServer()
+    {
+        base.OnLobbyStartServer();
+    }
 
     public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
     {
         if (conn.hostId == -1)
         {
-            var vrRig = (GameObject) GameObject.Instantiate(cameraRigPrefab, Vector3.zero, Quaternion.identity);
-            vrRig.transform.localScale = Vector3.one * 40f;
-
+            hostConn = conn;
             return (GameObject)GameObject.Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
         }
         else
         {
             return base.OnLobbyServerCreateGamePlayer(conn, playerControllerId);
         }
+    }
+
+    public override void OnLobbyServerSceneChanged(string sceneName)
+    {
+        base.OnLobbyServerSceneChanged(sceneName);
+
+        cameraRig.SetActive(true);
     }
 
     public override void OnLobbyClientEnter()

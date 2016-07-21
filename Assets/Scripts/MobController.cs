@@ -129,6 +129,22 @@ public class MobController : NetworkBehaviour
         }
     }
 
+    [SyncVar]
+    public Color color;
+
+    public bool isColorSet = false;
+
+    public GameObject BaseObject;
+    public bool isAttached;
+    public Rigidbody shadowRBody;
+
+    public void SetColor(Color value)
+    {
+        ((Renderer)BaseObject.GetComponent<Renderer>()).material.color = value;
+        isColorSet = true;
+    }
+
+    public GameObject shadowPrefab = null;
 
     private void Start()
     {
@@ -138,11 +154,26 @@ public class MobController : NetworkBehaviour
         m_RigidBody = GetComponent<Rigidbody>();
         m_Capsule = GetComponent<CapsuleCollider>();
 
+        if (isServer)
+        {
+            color = new Color(UnityEngine.Random.Range(0.5f, 1f), UnityEngine.Random.Range(0.5f, 1f), UnityEngine.Random.Range(0.5f, 1f));
+
+            var shadow = (GameObject)Instantiate(shadowPrefab, transform.position, transform.rotation);
+
+            NetworkServer.Spawn(shadow);
+
+            var shadowScript = shadow.GetComponent<MobControllerNetworkedShadowScript>();
+
+            shadowScript.Attach(this);
+        }
+
         if (isLocalPlayer)
         {
             cam.gameObject.SetActive(true);
             mouseLook.Init(transform, cam.transform);
         }
+
+
     }
 
 
@@ -157,12 +188,33 @@ public class MobController : NetworkBehaviour
                 m_Jump = true;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            transform.position = new Vector3(0, 10, 0);
+        }
+
+        if (!isColorSet)
+        {
+            SetColor(color);
+        }
+        
     }
 
 
     private void FixedUpdate()
     {
-        if (isLocalPlayer)
+        if (!isLocalPlayer && isAttached)
+        {
+            return;
+        }
+        else if (isLocalPlayer && isAttached)
+        {
+            m_RigidBody.MovePosition(shadowRBody.position);
+            m_RigidBody.MoveRotation(shadowRBody.rotation);
+            m_RigidBody.velocity = shadowRBody.velocity;
+        }
+        else if (isLocalPlayer && !isAttached)
         {
             GroundCheck();
             Vector2 input = GetInput();
@@ -209,6 +261,7 @@ public class MobController : NetworkBehaviour
                 }
             }
             m_Jump = false;
+            
         }
     }
 

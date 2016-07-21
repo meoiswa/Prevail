@@ -10,17 +10,17 @@ GameObject:
   - 4: {fileID: 418716}
   - 114: {fileID: 11481796}
   - 114: {fileID: 11435490}
-  - 114: {fileID: 11484496}
-  - 114: {fileID: 11481634}
-  - 114: {fileID: 11463912}
   - 114: {fileID: 11439034}
-  m_Layer: 0
+  - 114: {fileID: 11444440}
+  - 114: {fileID: 11439208}
+  - 114: {fileID: 11443232}
+  m_Layer: 10
   m_Name: BossBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &117548
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,7 +33,7 @@ GameObject:
   - 92: {fileID: 9240542}
   - 124: {fileID: 12440978}
   - 81: {fileID: 8146470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - 33: {fileID: 3342116}
   - 135: {fileID: 13524766}
   - 23: {fileID: 2311286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BossHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - 33: {fileID: 3322718}
   - 135: {fileID: 13592792}
   - 23: {fileID: 2387496}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BossRHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - 33: {fileID: 3379590}
   - 135: {fileID: 13556132}
   - 23: {fileID: 2343262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BossLHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -341,26 +341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0cf0a200ed19d48ab7f21bf476ff59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11463912
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 418466}
-  m_ChildIndex: 2
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
---- !u!114 &11481634
+  Head: {fileID: 119228}
+  LHand: {fileID: 133114}
+  RHand: {fileID: 126758}
+--- !u!114 &11439208
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -373,12 +357,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 489498}
   m_ChildIndex: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
+  m_InterpolateMovement: 0.2
+--- !u!114 &11443232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 418466}
+  m_ChildIndex: 2
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.2
+--- !u!114 &11444440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 427530}
+  m_ChildIndex: 0
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.2
 --- !u!114 &11481796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,25 +433,6 @@ MonoBehaviour:
     i15: 198
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &11484496
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 427530}
-  m_ChildIndex: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
 --- !u!124 &12440978
 Behaviour:
   m_ObjectHideFlags: 1

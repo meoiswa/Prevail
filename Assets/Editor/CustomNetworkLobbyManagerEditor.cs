@@ -15,7 +15,7 @@ namespace Assets.Editor
         {
             CustomNetworkLobbyManager myTarget = (CustomNetworkLobbyManager)target;
 
-            myTarget.cameraRigPrefab = (GameObject)EditorGUILayout.ObjectField("SteamVR Camera Rig", myTarget.cameraRigPrefab, typeof(GameObject), true);
+            myTarget.cameraRig = (GameObject)EditorGUILayout.ObjectField("SteamVR Camera Rig", myTarget.cameraRig, typeof(GameObject), true);
 
             base.OnInspectorGUI();
         }

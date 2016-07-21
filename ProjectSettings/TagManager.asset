@@ -15,9 +15,9 @@ TagManager:
   - 
   - CharacterCollider
   - World
-  - 
-  - 
-  - 
+  - BossProps
+  - VR
+  - NewtonVRShadow
   - 
   - 
   - 

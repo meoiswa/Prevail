@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3310914}
   - 65: {fileID: 6561920}
   - 23: {fileID: 2306706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,8 +31,7 @@ GameObject:
   - 114: {fileID: 11413018}
   - 114: {fileID: 11479020}
   - 114: {fileID: 11469802}
-  - 114: {fileID: 11477852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MobControllerNetworked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +49,7 @@ GameObject:
   - 20: {fileID: 2090612}
   - 81: {fileID: 8180106}
   - 124: {fileID: 12485734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -281,25 +280,10 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
---- !u!114 &11477852
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa4a39dec1a23a043a14d554ccce8fe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigidbody: {fileID: 5419272}
-  CanAttach: 1
-  DisableKinematicOnAttach: 1
-  EnableKinematicOnDetach: 0
-  DropDistance: 1
-  EnableGravityOnDetach: 1
-  AttachedHand: {fileID: 0}
-  InteractionPoint: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  isColorSet: 0
+  BaseObject: {fileID: 136388}
+  shadowPrefab: {fileID: 151400, guid: 4e4b47f5ec241f343a23130a5de9882b, type: 2}
 --- !u!114 &11479020
 MonoBehaviour:
   m_ObjectHideFlags: 1

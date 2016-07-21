@@ -26,7 +26,7 @@ public class GameManagerScript : NetworkBehaviour
             {
                 TimeSecondsLeft -= Time.deltaTime;
 
-                if (TimeSecondsLeft <= 0 || !game.Boss.Alive || game.BossWins )
+                if (TimeSecondsLeft <= 0 || (game.Boss != null && (!game.Boss.Alive || game.BossWins)) )
                 {
                     game.End();
                 }
