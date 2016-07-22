@@ -13,9 +13,11 @@ GameObject:
   - 23: {fileID: 2348660}
   - 198: {fileID: 19888208}
   - 199: {fileID: 19928970}
+  - 114: {fileID: 11447632}
+  - 114: {fileID: 11432280}
   m_Layer: 0
   m_Name: HealthQuirk
-  m_TagString: Untagged
+  m_TagString: HealthQuirk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,6 +68,49 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173836}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11432280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8254ffa47564f48b2d68280a3b98f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11447632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 97
+    i1: 213
+    i2: 33
+    i3: 153
+    i4: 204
+    i5: 248
+    i6: 7
+    i7: 164
+    i8: 139
+    i9: 247
+    i10: 151
+    i11: 62
+    i12: 139
+    i13: 78
+    i14: 7
+    i15: 180
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!135 &13545614
 SphereCollider:
   m_ObjectHideFlags: 1

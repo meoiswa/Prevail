@@ -10,7 +10,12 @@ public class QuirkScript : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        quirk = new SpeedUpQuirk();
+        if (gameObject.tag == "SpeedQuirk")
+            quirk = new SpeedUpQuirk();
+        else if (gameObject.tag == "HealthQuirk")
+            quirk = new HealthUpQuirk();
+        else if (gameObject.tag == "JumpQuirk")
+            quirk = new HealthUpQuirk();
 	}
 	
 	// Update is called once per frame

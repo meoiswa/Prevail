@@ -123,9 +123,9 @@ namespace Prevail.Model
 
         public MobCharacter() : base(100)
         {
-            ForwardSpeed = 8.0f;   // Speed when walking forward
-            BackwardSpeed = 4.0f;  // Speed when walking backwards
-            StrafeSpeed = 4.0f;    // Speed when walking sideways
+            ForwardSpeed = 12.0f;   // Speed when walking forward
+            BackwardSpeed = 6.0f;  // Speed when walking backwards
+            StrafeSpeed = 6.0f;    // Speed when walking sideways
             RunMultiplier = 2.0f;
             RunKey = KeyCode.LeftShift;
             JumpForce = 30f;
