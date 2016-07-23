@@ -3,7 +3,12 @@ using UnityEngine.Networking;
 using System.Collections;
 using Prevail.Model;
 
-public class VerySimpleMoveScript : NetworkBehaviour {
+public class BossController : NetworkBehaviour {
+
+    [SyncVar]
+    public Color Color;
+    [SyncVar]
+    public string Name;
 
     public BossCharacter Boss;
 
@@ -15,14 +20,26 @@ public class VerySimpleMoveScript : NetworkBehaviour {
     private GameObject VRLHand;
     private GameObject VRRHand;
 
+    Renderer m_renderer;
 	// Use this for initialization
 	void Start () {
+        m_renderer = GetComponent<Renderer>();
+        
         Boss = new BossCharacter();
-	}
-	
+    }
+    	
 	// Update is called once per frame
 	void Update () {
-	    if (isLocalPlayer)
+        //if (m_renderer.material.color != Color)
+        //{
+        //    m_renderer.material.color = Color;
+        //}
+        //if (name != Name)
+        //{
+        //    name = Name;
+        //}
+
+        if (isLocalPlayer)
         {
             if (VRHead == null)
             {

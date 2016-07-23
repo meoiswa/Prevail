@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fb042005af5a230429b3b8ad2087d68c
+timeCreated: 1469250527
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - m_PlayerPrefab: {instanceID: 0}
+  - matchMaker: {instanceID: 0}
+  - playerNetControllerPrefab: {fileID: 179776, guid: fbb3547428db08149b4a1d848311daed,
+      type: 2}
+  - playerNetCharacterPrefab: {fileID: 193634, guid: 793b37e78f6ae7b4a8a3c3234b9a5333,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
