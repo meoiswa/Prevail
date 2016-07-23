@@ -118,6 +118,7 @@ namespace Prevail.Model
         }
 
         public KeyCode RunKey { get; private set; }
+        public KeyCode HitKey { get; private set; }
 
         private Quirk currentQuirk;
 

@@ -9,13 +9,12 @@ using Prevail.Model;
 [RequireComponent(typeof(CapsuleCollider))]
 public class MobController : NetworkBehaviour
 {
-
     public MobCharacter character { get; set; }
 
     [Serializable]
     public class MovementSettings
     {
-        private MobCharacter _character;
+        public MobCharacter _character;
 
         public MovementSettings(MobCharacter character)
         {
@@ -129,7 +128,6 @@ public class MobController : NetworkBehaviour
         }
     }
 
-
     private void Start()
     {
         character = new MobCharacter();
@@ -207,6 +205,11 @@ public class MobController : NetworkBehaviour
                 {
                     StickToGroundHelper();
                 }
+            }
+
+            if (Input.GetKey(KeyCode.T))
+            {
+                m_RigidBody.AddForce(0f,0f,100f);
             }
             m_Jump = false;
         }
