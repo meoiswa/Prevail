@@ -16,11 +16,11 @@ TagManager:
   - UI
   - 
   - 
-  - CharacterCollider
-  - World
-  - BossProps
+  - Mob
+  - Boss
   - VR
-  - NewtonVRShadow
+  - World
+  - 
   - 
   - 
   - 
