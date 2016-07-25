@@ -43,6 +43,8 @@ public class PlayerNetController : NetworkBehaviour
 
     public bool Fire;
 
+    public bool Reset;
+
     bool isCameraSet = false;
 
     // Use this for initialization
@@ -67,18 +69,20 @@ public class PlayerNetController : NetworkBehaviour
             Horizontal = Input.GetAxis("Horizontal");
             Jump = Input.GetButton("Jump");
             Fire = Input.GetButton("Fire1");
+            Reset = Input.GetKey(KeyCode.R);
 
-            CmdInput(Vertical, Horizontal, Jump, Fire);
+            CmdInput(Vertical, Horizontal, Jump, Fire, Reset);
         }
     }
 
     [Command]
-    void CmdInput(float vertical, float horizontal, bool jump, bool fire)
+    void CmdInput(float vertical, float horizontal, bool jump, bool fire, bool reset)
     {
         Vertical = vertical;
         Horizontal = horizontal;
         Jump = jump;
         Fire = fire;
+        Reset = reset;
     }
 
 
@@ -86,8 +90,8 @@ public class PlayerNetController : NetworkBehaviour
     {
         if (Character != null && GameStarted)
         {
-            Character.FixedUpdateInput(Vertical, Horizontal, Jump, Fire);
-        }
+            Character.FixedUpdateInput(Vertical, Horizontal, Jump, Fire, Reset);
+        } 
     }
 }
 

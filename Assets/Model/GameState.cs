@@ -48,10 +48,16 @@ namespace Prevail.Model
             foreach(var s in objectStates)
             {
                 var gobj = ClientScene.FindLocalObject(new NetworkInstanceId(s.nId));
+
+                var netchar = gobj.GetComponent<PlayerNetCharacter>();
                 var rbody = gobj.GetComponent<Rigidbody>();
 
-                rbody.MovePosition(Vector3.Lerp(rbody.position, new Vector3(s.x, s.y, s.z), time - PhysicsTime));
+                var tpos = new Vector3(s.x, s.y, s.z);
                 
+                if (netchar == null || !netchar.Controller.isLocalPlayer || (rbody.transform.position-tpos).sqrMagnitude > PlayerNetCharacter.maxPosError)
+                {
+                    rbody.MovePosition(Vector3.Lerp(rbody.position, tpos, time - PhysicsTime));
+                }
                 
                 //rbody.MovePosition(new Vector3(s.x, s.y, s.z));
                 rbody.velocity = new Vector3(s.vx, s.vy, s.vz);

@@ -7,6 +7,8 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerNetCharacter : NetworkBehaviour
 {
+    public static float maxPosError = 0.1f;
+
     PlayerNetController controller;
     [SyncVar]
     uint controller_nId;
@@ -54,8 +56,12 @@ public class PlayerNetCharacter : NetworkBehaviour
         }
     }
     
-    public void FixedUpdateInput(float vertical, float horizontal, bool jump, bool fire)
+    public void FixedUpdateInput(float vertical, float horizontal, bool jump, bool fire, bool reset)
     {
+        if (reset)
+        {
+            m_rbody.MovePosition(Vector3.zero + Vector3.up * 2f);
+        }
         m_rbody.AddForce(new Vector3(horizontal, jump ? 1f : 0f, vertical) * 10f);
     }
 }
