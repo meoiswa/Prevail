@@ -36,13 +36,8 @@ public class PlayerNetCharacter : NetworkBehaviour
     {
         m_rbody = GetComponent<Rigidbody>();
         m_renderer = GetComponent<Renderer>();
-
-        if (isServer)
-        {
-            //SyncRigidbody(NetworkInterval);
-        }
     }
-    
+
     // Update is called once per frame
     void Update()
     {

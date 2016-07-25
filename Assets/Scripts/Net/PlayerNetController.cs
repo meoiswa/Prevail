@@ -26,7 +26,9 @@ public class PlayerNetController : NetworkBehaviour
             character_nId = character.GetComponent<NetworkIdentity>().netId.Value;
         }
     }
-    
+
+    [SyncVar]
+    public bool GameStarted = false;
 
     [SyncVar]
     public Color Color;
@@ -41,6 +43,8 @@ public class PlayerNetController : NetworkBehaviour
 
     public bool Fire;
 
+    bool isCameraSet = false;
+
     // Use this for initialization
     void Start()
     {
@@ -49,7 +53,15 @@ public class PlayerNetController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isLocalPlayer)
+        if (isLocalPlayer && Character != null && !isCameraSet)
+        {
+            Camera.main.transform.parent = Character.gameObject.transform;
+            Camera.main.transform.localPosition = new Vector3(0, 8, -8);
+            Camera.main.transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
+
+            isCameraSet = true;
+        }
+        if (isLocalPlayer && GameStarted)
         {
             Vertical = Input.GetAxis("Vertical");
             Horizontal = Input.GetAxis("Horizontal");
@@ -72,7 +84,7 @@ public class PlayerNetController : NetworkBehaviour
 
     void FixedUpdate()
     {
-        if (Character != null)
+        if (Character != null && GameStarted)
         {
             Character.FixedUpdateInput(Vertical, Horizontal, Jump, Fire);
         }

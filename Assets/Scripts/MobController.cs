@@ -135,17 +135,13 @@ public class MobController : NetworkBehaviour
     public bool isColorSet = false;
 
     public GameObject BaseObject;
-    public bool isAttached;
-    public Rigidbody shadowRBody;
 
     public void SetColor(Color value)
     {
         ((Renderer)BaseObject.GetComponent<Renderer>()).material.color = value;
         isColorSet = true;
     }
-
-    public GameObject shadowPrefab = null;
-
+    
     private void Start()
     {
         character = new MobCharacter();
@@ -157,14 +153,6 @@ public class MobController : NetworkBehaviour
         if (isServer)
         {
             color = new Color(UnityEngine.Random.Range(0.5f, 1f), UnityEngine.Random.Range(0.5f, 1f), UnityEngine.Random.Range(0.5f, 1f));
-
-            var shadow = (GameObject)Instantiate(shadowPrefab, transform.position, transform.rotation);
-
-            NetworkServer.Spawn(shadow);
-
-            var shadowScript = shadow.GetComponent<MobControllerNetworkedShadowScript>();
-
-            shadowScript.Attach(this);
         }
 
         if (isLocalPlayer)
@@ -204,17 +192,7 @@ public class MobController : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if (!isLocalPlayer && isAttached)
-        {
-            return;
-        }
-        else if (isLocalPlayer && isAttached)
-        {
-            m_RigidBody.MovePosition(shadowRBody.position);
-            m_RigidBody.MoveRotation(shadowRBody.rotation);
-            m_RigidBody.velocity = shadowRBody.velocity;
-        }
-        else if (isLocalPlayer && !isAttached)
+        if (isLocalPlayer)
         {
             GroundCheck();
             Vector2 input = GetInput();

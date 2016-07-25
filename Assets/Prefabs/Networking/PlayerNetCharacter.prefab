@@ -14,7 +14,6 @@ GameObject:
   - 54: {fileID: 5455744}
   - 114: {fileID: 11478350}
   - 114: {fileID: 11494872}
-  - 114: {fileID: 11472080}
   m_Layer: 8
   m_Name: PlayerNetCharacter
   m_TagString: Untagged
@@ -95,25 +94,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11472080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa4a39dec1a23a043a14d554ccce8fe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Rigidbody: {fileID: 0}
-  CanAttach: 1
-  DisableKinematicOnAttach: 1
-  EnableKinematicOnDetach: 0
-  DropDistance: 1
-  EnableGravityOnDetach: 1
-  AttachedHand: {fileID: 0}
-  InteractionPoint: {fileID: 0}
 --- !u!114 &11478350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,6 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eaa05b45bd282d47b75b8108837704a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_LastSendTime: 0
+  m_SyncVarGuard: 0
+  m_MyView: {fileID: 0}
+  controller: {fileID: 0}
+  m_rbody: {fileID: 0}
+  m_renderer: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
