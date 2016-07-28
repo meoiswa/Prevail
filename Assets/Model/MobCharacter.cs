@@ -124,15 +124,7 @@ namespace Prevail.Model
 
         public MobCharacter()
         {
-            MaxHealth = 100;
-            Health = MaxHealth;
-
-            ForwardSpeed = 8.0f;   // Speed when walking forward
-            BackwardSpeed = 4.0f;  // Speed when walking backwards
-            StrafeSpeed = 4.0f;    // Speed when walking sideways
-            RunMultiplier = 2.0f;
-            RunKey = KeyCode.LeftShift;
-            JumpForce = 30f;
+            MaxHealth = 100;/*_mpForce = 30f;*/
         }
 
         public void Pick(Quirk q)
