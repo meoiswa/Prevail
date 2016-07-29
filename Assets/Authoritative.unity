@@ -167,7 +167,7 @@ MonoBehaviour:
   matchMaker: {fileID: 0}
   matchName: default
   matchSize: 4
-  City: {fileID: 0}
+  City: {fileID: 1937376114}
   PlayerName: 
   PlayerColor: {r: 0, g: 0, b: 0, a: 0}
   playerNetControllerPrefab: {fileID: 179776, guid: fbb3547428db08149b4a1d848311daed,
@@ -290,6 +290,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1937376114 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11457682, guid: 706619ecc39b0da4ea5e9e4b8dcdaaa0,
+    type: 2}
+  m_PrefabInternal: {fileID: 2124371637}
+  m_Script: {fileID: 11500000, guid: 3304ed2a608249c4d91c446bb2ba933c, type: 3}
 --- !u!1001 &2124371637
 Prefab:
   m_ObjectHideFlags: 0
