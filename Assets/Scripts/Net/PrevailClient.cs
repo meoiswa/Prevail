@@ -6,6 +6,7 @@ using System.Linq;
 using Prevail.Model;
 using System;
 using Prevail.Model.Net;
+using UnityEngine.SceneManagement;
 
 public class PrevailClient : NetworkManager
 {
@@ -46,7 +47,14 @@ public class PrevailClient : NetworkManager
         }
         ClientScene.AddPlayer(conn, 0, new PlayerSettingsMessage(PlayerName, PlayerColor, false));
     }
-    
+
+    public override void OnStopClient()
+    {
+        base.OnStopClient();
+        Debug.Log("Client Disconnected");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void FixedUpdate()
     {
         if (lastState != null && pendingApply)
