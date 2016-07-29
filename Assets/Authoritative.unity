@@ -127,17 +127,23 @@ MonoBehaviour:
   m_PlayerSpawnMethod: 0
   m_OfflineScene: 
   m_OnlineScene: 
-  m_SpawnPrefabs: []
-  m_CustomConfig: 0
+  m_SpawnPrefabs:
+  - {fileID: 193634, guid: 793b37e78f6ae7b4a8a3c3234b9a5333, type: 2}
+  - {fileID: 179776, guid: fbb3547428db08149b4a1d848311daed, type: 2}
+  - {fileID: 116616, guid: c6f77a389fae03d4c8283dd8a33ba4c6, type: 2}
+  - {fileID: 173836, guid: 61d52199ccf807a48bf7973e8b4e07b4, type: 2}
+  - {fileID: 132252, guid: 3fc6bbf47d365ce42b7c969cd631bcad, type: 2}
+  - {fileID: 151176, guid: d14336a64bf617e4c917b1c9dd401912, type: 2}
+  m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:
     m_PacketSize: 1500
     m_FragmentSize: 500
     m_ResendTimeout: 1200
-    m_DisconnectTimeout: 2000
+    m_DisconnectTimeout: 10000
     m_ConnectTimeout: 2000
     m_MinUpdateTimeout: 10
-    m_PingTimeout: 500
+    m_PingTimeout: 1000
     m_ReducedPingTimeout: 100
     m_AllCostTimeout: 20
     m_NetworkDropThreshold: 5
@@ -156,7 +162,7 @@ MonoBehaviour:
     m_ReactorMaximumReceivedMessages: 1024
     m_ReactorMaximumSentMessages: 1024
     m_MaxPacketSize: 2000
-  m_Channels: 
+  m_Channels: 050000000000000006000000
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
