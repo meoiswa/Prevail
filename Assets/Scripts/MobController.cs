@@ -198,9 +198,21 @@ public class MobController : NetworkBehaviour
         {
             SetColor(color);
         }
-        
-    }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            CmdFire();
+        }
 
+    }
+    [Command]
+    void CmdFire()
+    {
+        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 5;
+        NetworkServer.Spawn(bullet);
+        Destroy(bullet, 5f);
+    }
 
     private void FixedUpdate()
     {
@@ -261,7 +273,7 @@ public class MobController : NetworkBehaviour
                 }
             }
             m_Jump = false;
-            
+
         }
     }
 
@@ -272,13 +284,16 @@ public class MobController : NetworkBehaviour
 
     public void OnTriggerEnter(Collider col)
     {
-        var q = col.GetComponent<QuirkScript>();
-
-        if (q != null)
+        if (isLocalPlayer)
         {
-            character.Pick(q.quirk);
+            var q = col.GetComponent<QuirkScript>();
 
-            q.Destroy();
+            if (q != null)
+            {
+                character.Pick(q.quirk);
+
+                q.Destroy();
+            }
         }
     }
 
