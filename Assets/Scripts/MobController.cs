@@ -9,7 +9,8 @@ using Prevail.Model;
 [RequireComponent(typeof(CapsuleCollider))]
 public class MobController : NetworkBehaviour
 {
-
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
     public MobCharacter character { get; set; }
 
     [Serializable]
@@ -158,7 +159,7 @@ public class MobController : NetworkBehaviour
         {
             color = new Color(UnityEngine.Random.Range(0.5f, 1f), UnityEngine.Random.Range(0.5f, 1f), UnityEngine.Random.Range(0.5f, 1f));
 
-            var shadow = (GameObject)Instantiate(shadowPrefab, transform.position, transform.rotation);
+            var shadow = (GameObject)Instantiate(shadowPrefab, bulletSpawn.position, bulletSpawn.rotation);
 
             NetworkServer.Spawn(shadow);
 
@@ -207,7 +208,7 @@ public class MobController : NetworkBehaviour
     [Command]
     void CmdFire()
     {
-        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        var bullet = (GameObject)Instantiate(bulletPrefab, transform.position, transform.rotation);
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 5;
         NetworkServer.Spawn(bullet);
