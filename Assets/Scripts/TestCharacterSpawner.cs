@@ -17,7 +17,6 @@ public class TestCharacterSpawner : MonoBehaviour {
         chara.Controller = ctrl;
 
         ctrl.offline = true;
-        ctrl.GameStarted = true;
 
     }
 	
